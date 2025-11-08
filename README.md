@@ -3,7 +3,7 @@
 A lightweight personal finance tracker built with **React** and **TailwindCSS**.  
 This app helps you track your income, expenses, and balance — featuring localStorage persistence, edit modal accessibility, CSV export/import, and demo data seeding.
 
-**Live demo:** https://financetracker-eight-sepia.vercel.app/ 
+**Live demo:** [https://financetracker-eight-sepia.vercel.app/](https://finance-tracker-eight-zeta.vercel.app/) 
 
 ---
 
