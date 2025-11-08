@@ -11,13 +11,20 @@ export default function EditModal({ transaction, onSave, onClose, openerRef }) {
     // Focus first input when modal opens
     const first = modalRef.current && modalRef.current.querySelector("input, select, button");
     if (first) first.focus();
+
     const prevActive = document.activeElement;
+    // copy the current value of openerRef to avoid stale-ref warning in cleanup
+    const opener = openerRef && openerRef.current ? openerRef.current : null;
+
     return () => {
       // return focus to opener when closing
-      if (openerRef && openerRef.current) openerRef.current.focus();
-      else if (prevActive) prevActive.focus();
+      if (opener && typeof opener.focus === "function") opener.focus();
+      else if (prevActive && typeof prevActive.focus === "function") prevActive.focus();
     };
-  }, [openerRef]);
+    // NOTE: we intentionally do NOT include openerRef as dependency because we copied its current value.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // run once on mount/unmount
+
 
   useEffect(() => {
     const onKey = (e) => {
