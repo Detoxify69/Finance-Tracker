@@ -96,9 +96,15 @@ finance-tracker/
 
 Dashboard
 
+image.png
+
 Edit Modal
 
+image.png
+
 Exported CSV
+
+image.png
 
 
 🧠 Future Improvements
